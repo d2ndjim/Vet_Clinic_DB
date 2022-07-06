@@ -11,4 +11,24 @@ CREATE TABLE animals (
 
 ALTER TABLE animals ADD COLUMN species VARCHAR;
 
+/* new tables */
+CREATE TABLE owners (
+    id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    full_name VARCHAR(50) NOT NULL,
+    age INT NOT NULL
+);
 
+CREATE TABLE species (
+   id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+   name VARCHAR(50) 
+);
+
+ALTER TABLE animals DROP COLUMN species;
+
+ALTER TABLE animals ADD COLUMN species_id INT, 
+ADD CONSTRAINT fk_species FOREIGN KEY (species_id) 
+REFERENCES species(id) ON DELETE CASCADE;
+
+ALTER TABLE animals ADD COLUMN owner_id INT,
+ADD CONSTRAINT fk_owners FOREIGN KEY (owner_id) 
+REFERENCES owners(id) ON DELETE CASCADE;
