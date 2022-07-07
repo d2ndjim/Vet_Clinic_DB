@@ -48,7 +48,11 @@ CREATE TABLE specializations (
 );
 
 CREATE TABLE visits (
-    animal_id INT, vet_id INT, PRIMARY KEY (animal_id, vet_id),
-    date_of_visit DATE NOT NULL, FOREIGN KEY (animal_id) REFERENCES animals(id) ON DELETE CASCADE,
+    id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    animal_id INT, vet_id INT,
+    date_of_visit DATE NOT NULL, 
+    FOREIGN KEY (animal_id) REFERENCES animals(id) ON DELETE CASCADE,
     FOREIGN KEY (vet_id) REFERENCES vets(id) ON DELETE CASCADE
 );
+
+
