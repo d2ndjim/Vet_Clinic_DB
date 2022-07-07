@@ -56,3 +56,4 @@ CREATE TABLE visits (
 );
 
 
+SELECT animals.name as animal, vets.name as vet, COUNT(visits.date_of_visit) as total_visits, species.name as specie FROM animals INNER JOIN visits ON animals.id = visits.animal_id INNER JOIN vets ON visits.vet_id = vets.id INNER JOIN species ON animals.species_id = species.id WHERE vets.name = 'Maisy Smith' GROUP BY animals.name, vets.name, species.name ORDER BY total_visits DESC LIMIT 1;
