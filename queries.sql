@@ -105,7 +105,7 @@ LIMIT 1;
 
 
 CREATE index animal_index ON visits(id);
-CREATE index vets_index ON visits(id);
+CREATE index vets_index ON visits(id); 
 CREATE index email_index ON owners(email);
 
 
