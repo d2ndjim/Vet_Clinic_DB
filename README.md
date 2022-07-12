@@ -1,5 +1,7 @@
 # VET CLINIC DATABASE
 
+![drawSQL-export-2022-07-12_13_41](https://user-images.githubusercontent.com/73438276/178492543-40a77e20-c52c-4484-b827-42ce1fadd900.png)
+
 > This template should be used for database related projects at Microverse.
 > Generate your own repository, update this README and edit all files content while working on projects. You should not be adding any new files unless asked otherwise.
 
